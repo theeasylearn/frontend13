@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center">Registration form</h1>
+    <hr width="50%">
+    <form action="success.html" method="post" enctype="multipart/form-data">
+        <table align="center" cellpadding="10" width="50%" border="2">
+            <tr>
+                <td>
+                    <input type="text" name="fullname" placeholder="your fullname here">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="email" name="email" placeholder="your email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" name="mobile" placeholder="mobile">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>BirthDate</b> <br><input type="date" name="dob" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Gender</b> <br>
+                    <label for="male">
+                        <input id="male" type="radio" name="gender" value="1">Male 
+                    </label>
+                    <label for="female">
+                        <input id="female" type="radio" name="gender" value="0">Female 
+                    </label>
+                </td>
+            </tr>
+            <tr>
+               <td>
+                    <b>Select Photo</b> <br>
+                    <input type="file" name="photo" accept="image/*">
+               </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Select language you can speak,read, write</b> <br>
+                    <label for="gujarati">
+                        <input id="gujarati" type="checkbox" name="gujarati"  value="1">Gujarati
+                    </label> <br>
+                    <label for="hindi">
+                        <input id="hindi" type="checkbox" name="hindi" value="2">Hindi 
+                    </label> <br>
+                    <label for="english">
+                        <input id="english" type="checkbox" name="english" value="4">English 
+                    </label> <br>
+                    <label for="marathi">
+                        <input id="marathi" type="checkbox" name="marathi" value="8">Marathi 
+                    </label> <br>
+                    <label for="tamil">
+                        <input id="tamil" type="checkbox" name="tamil" value="16">Tamil 
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="city">
+                        <option value="">Select city</option>    
+                        <option value="1">Bhavnagar</option>
+                        <option value="2">Baroda</option>
+                        <option value="3">Surat</option>
+                        <option value="4">Rajkot</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Address</b><br>
+                    <textarea name="address" cols="60" rows="10"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Register" name="register">
+                    <input type="reset" value="clear all" name="clear">
+                    <input type="button" value="I Can't do anything" name="nothing">
+                    <input type="hidden" value="secret" name="secret">
+                </td> 
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

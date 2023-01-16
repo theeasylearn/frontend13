@@ -1,0 +1,12 @@
+1) develope login form 
+        Mobile
+        Password 
+
+2) develope change password form 
+    current password
+    new password
+    confirm new password 
+3) develope forgot password form 
+        Email Address/mobile 
+
+4) develop resume using only html tags as per structure given Web-Developer_resume.jpg file 

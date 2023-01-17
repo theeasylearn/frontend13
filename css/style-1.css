@@ -1,0 +1,20 @@
+body 
+{
+    background-color: aliceblue;
+
+    background-image: url('images/flag.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+div 
+{
+    border: 2px solid black;
+    margin-bottom:10px;
+    padding:10px;
+    width:50%;
+    height:300px;
+    overflow:scroll;
+    box-sizing: border-box;
+    float:left;
+}

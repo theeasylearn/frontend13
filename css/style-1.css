@@ -1,3 +1,10 @@
+*
+{
+    margin:0px;
+    padding:0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1px;
+}
 body 
 {
     background-color: aliceblue;
@@ -17,4 +24,8 @@ div
     overflow:scroll;
     box-sizing: border-box;
     float:left;
+}
+h1 
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

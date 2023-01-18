@@ -1,0 +1,26 @@
+*
+{
+    margin: 0px;
+    padding:0px;
+    letter-spacing: 1px;
+}
+body 
+{
+    background-color: cornsilk;
+}
+.sports-news
+{
+    border:1px solid brown;
+    padding:10px;
+    font-size: 1.2rem;
+    text-align: justify;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.science-news
+{
+    border:1px solid red;
+    padding:10px;
+    font-size: 1.2rem;
+    text-align: right;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

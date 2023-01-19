@@ -1,0 +1,60 @@
+*
+{
+    margin: 0px;
+    padding:0px;
+    letter-spacing: 1px;
+}
+/* id selector style */
+#header
+{
+    background-color: gainsboro;
+    display: flex;
+    justify-content: space-between; /*horizontal alignment of its children */
+    align-items: center;
+
+    /* make header always visible at the top */
+    position: sticky;
+    top: 0px;
+    left: 0px;
+}
+#header>ul /* if ul is direct child of header */
+{
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    align-items: center; /* vertical alignment */
+}
+#header>span>span 
+{
+    font-size: 30px;
+    text-transform: uppercase;
+}
+#header>span /* if span is direct child of header */
+{
+    display: flex;
+    align-items: center;
+}
+#header>ul>li>a:link /* a:link pusedo class */
+{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color:blue;
+}
+#header>ul>li>a:visited /* a:link pusedo class */
+{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color:blue;
+}
+#content 
+{
+    width:85%;
+    margin: auto; /* content itself will be in center of its parent */
+}
+#content>p 
+{
+    text-align: justify;
+    line-height: 125%;
+    word-spacing: 5px;
+    font-size: 18px;
+}

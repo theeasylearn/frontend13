@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Events, getelementByid example</h1> <hr>
+    <table border="2" align="center" width="80%">
+        <tr>
+            <td colspan="2" align="center">
+                <input type="text" id="name" placeholder="Your Name" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Set Content" onclick="SetContent();" />
+            </td>
+            <td>
+                <input type="button" value="Get Content" onclick="GetContent();" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center" id="output" >
+                <br>
+            </td>
+        </tr>
+    </table>
+    <script>
+        //user defined function
+        function SetContent()
+        {
+            var InputedText = document.getElementById("name").value;
+            document.getElementById("output").innerHTML = `Welcome Mr/Miss/Mrs <b>${InputedText}</b>`;
+            document.getElementById("name").value = '';
+        }
+        function GetContent()
+        {
+            var text = document.getElementById("output").innerHTML;
+            alert(text);
+        }
+    </script>
+</body>
+</html>

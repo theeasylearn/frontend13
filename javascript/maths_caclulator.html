@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Maths Calculator</h1> <hr>
+    <form action="">
+        <table align="center" cellpadding="10" border="2" width="50%">
+            <tr>
+                <td colspan="2" align="center">
+                    <h4>Maths Calculator</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter first number</td>
+                <td>
+                    <input type="text" id="first" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter second number
+                </td>
+                <td>
+                    <input type="text" id="second"> 
+                </td>
+            </tr>
+            <tr>
+                <td>Select operation</td>
+                <td>
+                    <input type="radio" name="operation" value="1" > Addition
+                    <input type="radio" name="operation" value="2" > Substraction
+                    <input type="radio" name="operation" value="3" > Mutiplication
+                    <input type="radio" name="operation" value="4" > Division
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="Calculate result" 
+                    onclick="CalculateResult();">
+                    <input type="reset" value="clear all">
+                </td>
+            </tr>
+            <tr>
+                <td id="output" colspan="2" align="center"></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        //user defined function
+        function CalculateResult()
+        {
+            var first = document.getElementById("first");
+            var second = document.getElementById("second");
+            
+        }
+    </script>
+</body>
+</html>

@@ -18,7 +18,7 @@
             <tr>
                 <td>Enter first number</td>
                 <td>
-                    <input type="text" id="first" >
+                    <input type="number" id="first" >
                 </td>
             </tr>
             <tr>
@@ -26,16 +26,24 @@
                     Enter second number
                 </td>
                 <td>
-                    <input type="text" id="second"> 
+                    <input type="number" id="second"> 
                 </td>
             </tr>
             <tr>
                 <td>Select operation</td>
                 <td>
-                    <input type="radio" name="operation" value="1" > Addition
-                    <input type="radio" name="operation" value="2" > Substraction
-                    <input type="radio" name="operation" value="3" > Mutiplication
-                    <input type="radio" name="operation" value="4" > Division
+                    <label for="addition">
+                        <input id="addition" type="radio" name="operation" value="1" > Addition
+                    </label>
+                    <label for="substraction">
+                        <input id="substraction" type="radio" name="operation" value="2" > Substraction
+                    </label>
+                    <label for="multiplication">
+                        <input id="multiplication" type="radio" name="operation" value="3" > Mutiplication
+                    </label>
+                   <label for="division">
+                    <input id="division" type="radio" name="operation" value="4" > Division
+                   </label>
                 </td>
             </tr>
             <tr>
@@ -56,7 +64,44 @@
         {
             var first = document.getElementById("first");
             var second = document.getElementById("second");
-            
+            var operation = document.querySelector("input[name='operation']:checked");
+            var output = document.getElementById("output");
+            var result;
+            // alert(first.value);
+            if(operation==null)
+            {
+                alert("please select operation");
+            }
+            else if(first.value=="")
+            {
+                alert("please give input in first textbox");
+                first.focus(); //set cursor into textbox whose id is first
+            }
+            else if(second.value=="")
+            {
+                alert("please give input in second textbox");
+                second.focus();
+            }
+            else 
+            {
+                if(operation.value==1)
+                {
+                    result = parseInt(first.value) + parseInt(second.value);
+                }
+                else if(operation.value==2)
+                {
+                    result = parseInt(first.value) - parseInt(second.value);
+                }
+                else if(operation.value==3)
+                {
+                    result = parseInt(first.value) * parseInt(second.value);
+                }
+                else if(operation.value==4)
+                {
+                    result = (parseInt(first.value) / parseInt(second.value)).toFixed(2);
+                }
+                output.innerHTML = `result of operation is ${result}`;
+            }
         }
     </script>
 </body>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="success.html" method="post" onsubmit="GenerateTable(this);" >
+        <table align="center" border="2" cellpadding="10" width="70%">
+            <tr>
+                <td colspan="2" align="center">
+                    <h3>HTML table generator</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter row</td>
+                <td>
+                    <input type="text" name="tablerows" id="tablerows">
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Enter Column</td>
+                <td>
+                    <input type="text" name="tablecolumn" id="tablecolumn">
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Select loop</td>
+                <td>
+                    <select name="loop">
+                        <option value="1">While loop</option>
+                        <option value="2">For loop</option>
+                        <option value="3">Do while loop</option>
+                    </select>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Generate HTML table">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        //user defined function(2nd method)
+        let GenerateTable = function(e)
+        {
+            e.preventDefault();
+            alert("form submitted");
+        }
+    </script>
+</body>
+</html>

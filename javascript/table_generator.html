@@ -7,17 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="success.html" method="post" onsubmit="GenerateTable(this);" >
+    <form action="success.html" method="post" onsubmit="return GenerateTable();" >
         <table align="center" border="2" cellpadding="10" width="70%">
             <tr>
-                <td colspan="2" align="center">
+                <td colspan="3" align="center">
                     <h3>HTML table generator</h3>
                 </td>
             </tr>
             <tr>
                 <td>Enter row</td>
                 <td>
-                    <input type="text" name="tablerows" id="tablerows">
+                    <input type="text" name="tablerow" id="tablerow">
                 </td>
                 <td></td>
             </tr>
@@ -31,7 +31,7 @@
             <tr>
                 <td>Select loop</td>
                 <td>
-                    <select name="loop">
+                    <select id="loop">
                         <option value="1">While loop</option>
                         <option value="2">For loop</option>
                         <option value="3">Do while loop</option>
@@ -40,18 +40,52 @@
                 <td></td>
             </tr>
             <tr>
-                <td colspan="2" align="center">
+                <td colspan="3" align="center">
                     <input type="submit" value="Generate HTML table">
                 </td>
             </tr>
         </table>
+
+        <div id="mydiv"><h3>here we will display table</h3></div>
     </form>
     <script>
+        //variables declaration 
+        var tablerow = document.getElementById("tablerow");
+        var tablecolumn = document.getElementById("tablecolumn");
+        var loop = document.getElementById("loop");
+        var mydiv = document.getElementById("mydiv");
         //user defined function(2nd method)
-        let GenerateTable = function(e)
-        {
-            e.preventDefault();
-            alert("form submitted");
+        let StartTable = function(){
+            return "<table border='2' align='center' cellpadding='10' width='80%'>";
+        }
+        let EndTable = function(){
+            return "</table>";
+        }
+        let GenerateTable = function(){
+            var output;
+            if (loop.value==1)
+            {
+                output = StartTable();
+                var row=1;
+
+                while(row<=parseInt(tablerow.value))
+                {
+                    output += "<tr>";
+                    var column = 1;
+                    while(column<=parseInt(tablecolumn.value))
+                    {
+                        output += "<td>The easylearn academy</td>";  
+                        column++;
+                    }  
+                    output += "</tr>";
+                    row++;
+                }
+                
+
+                output+= EndTable();
+            }
+            mydiv.innerHTML = output
+            return false;
         }
     </script>
 </body>

@@ -84,6 +84,42 @@
 
                 output+= EndTable();
             }
+            
+            if(loop.value==2)
+            {
+                output = StartTable();
+                for(row=1;row<=parseInt(tablerow.value);row++)
+                {
+                    output += "<tr>";
+                    for(var column=1;column<=parseInt(tablecolumn.value);column++)    
+                    {
+                        output += `<td>${column}</td>`;
+                    }
+                    output += "</tr>";
+                }
+                output += EndTable();
+            }
+        if(loop.value==3)
+        {
+            output = StartTable();
+            output += "<tr>";
+            var row = 1;
+            do 
+            {
+                var column=1;
+                do 
+                {
+                    output += "<td>meet</td>";
+                    column=column+1;
+                }while(column<=parseInt(tablecolumn.value));
+                output += "</tr>";
+                row = row + 1;
+            }while(row<=parseInt(tablerow.value));
+
+            
+
+            output += EndTable(); 
+        }   
             mydiv.innerHTML = output
             return false;
         }

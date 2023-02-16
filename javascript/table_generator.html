@@ -5,6 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* internal style */
+        .error 
+        {
+            background-color:bisque;
+            color:red;
+            font-weight: bold;
+            font-size: 16px;
+            border:2px solid red;
+        }
+        .no-error
+        {
+            background-color:white;
+            color:white;
+            font-size: 0px;
+            border:1px solid black;
+        }
+    </style>
 </head>
 <body>
     <form action="success.html" method="post" onsubmit="return GenerateTable();" >
@@ -15,18 +33,20 @@
                 </td>
             </tr>
             <tr>
-                <td>Enter row</td>
-                <td>
-                    <input type="text" name="tablerow" id="tablerow">
+                <td width="20%">Enter row</td>
+                <td width="30%">
+                    <input type="text" name="tablerow" id="tablerow" onblur="Validate(this.id);">
                 </td>
-                <td></td>
+                <td class="no-error" id="td_tablerow">row can not be empty</td>
             </tr>
             <tr>
                 <td>Enter Column</td>
                 <td>
-                    <input type="text" name="tablecolumn" id="tablecolumn">
+                    <input type="text" name="tablecolumn" id="tablecolumn" onblur="Validate(this.id);">
                 </td>
-                <td></td>
+                <td class="no-error" id="td_tablecolumn">
+                    column can not be empty
+                </td>
             </tr>
             <tr>
                 <td>Select loop</td>
@@ -49,11 +69,31 @@
         <div id="mydiv"><h3>here we will display table</h3></div>
     </form>
     <script>
+        //arrow function 
+        let $ = (ControlId) => document.getElementById(ControlId);
+        
         //variables declaration 
-        var tablerow = document.getElementById("tablerow");
-        var tablecolumn = document.getElementById("tablecolumn");
-        var loop = document.getElementById("loop");
-        var mydiv = document.getElementById("mydiv");
+        var tablerow = $("tablerow");
+        var tablecolumn = $("tablecolumn");
+        var loop = $("loop");
+        var mydiv = $("mydiv");
+
+        let Validate = function(ControlId){
+            console.log(ControlId);
+            var errortd= "td_" + ControlId;
+            console.log(errortd);
+            if($(ControlId).value=='')
+            {
+                // console.log(ControlId + ' is empty empty');
+                $(errortd).className = "error";
+            }
+            // else if(document.getElementById(ControlId))
+            else 
+            {
+                // console.log(ControlId + ' has value');
+                $(errortd).className = "no-error";
+            }
+        }
         //user defined function(2nd method)
         let StartTable = function(){
             return "<table border='2' align='center' cellpadding='10' width='80%'>";

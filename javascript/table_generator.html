@@ -35,17 +35,19 @@
             <tr>
                 <td width="20%">Enter row</td>
                 <td width="30%">
-                    <input type="text" name="tablerow" id="tablerow" onblur="Validate(this.id);">
+                    <input type="text" name="tablerow" id="tablerow" onblur="Validate(this.id);" class="mynumber" data-error-empty="row can not be empty"  data-error-number="row must be only digits" >
                 </td>
-                <td class="no-error" id="td_tablerow">row can not be empty</td>
+                <td class="no-error" id="td_tablerow">
+
+                </td>
             </tr>
             <tr>
                 <td>Enter Column</td>
                 <td>
-                    <input type="text" name="tablecolumn" id="tablecolumn" onblur="Validate(this.id);">
+                    <input type="text" name="tablecolumn" id="tablecolumn" onblur="Validate(this.id);" class="mynumber" data-error-empty="column can not be empty"   data-error-number="column must be only digits">
                 </td>
                 <td class="no-error" id="td_tablecolumn">
-                    column can not be empty
+                   
                 </td>
             </tr>
             <tr>
@@ -77,7 +79,32 @@
         var tablecolumn = $("tablecolumn");
         var loop = $("loop");
         var mydiv = $("mydiv");
+        function isInt(str)
+        {
+            let isnum = /^\d+$/.test(str);
+            return isnum
+        }
 
+        let ValidateInputAtSubmit = function()
+        {
+            let inputs = document.getElementsByClassName("mynumber");
+            for (let index = 0; index < inputs.length; index++) {
+               if(inputs[index].value=="")
+               {
+                    alert(inputs[index].getAttribute("data-error-empty"));
+                    inputs[index].focus();
+                    return false
+               }
+               if(isInt(inputs[index].value)==false)
+               {
+                    alert(inputs[index].getAttribute("data-error-number"));
+                    inputs[index].focus();
+                    return false
+               }
+            }
+            return true;
+        }
+        
         let Validate = function(ControlId){
             console.log(ControlId);
             var errortd= "td_" + ControlId;
@@ -86,6 +113,13 @@
             {
                 // console.log(ControlId + ' is empty empty');
                 $(errortd).className = "error";
+                $(errortd).innerHTML = "value is required";
+            }
+            else if(isInt($(ControlId).value)==false)
+            {
+                // console.log(ControlId + ' is empty empty');
+                $(errortd).className = "error";
+                $(errortd).innerHTML = "only digits is allowed";
             }
             // else if(document.getElementById(ControlId))
             else 
@@ -102,6 +136,32 @@
             return "</table>";
         }
         let GenerateTable = function(){
+            //input validation 
+            // if(tablerow.value=="")
+            // {
+            //     alert("row can not be empty");
+            //     tablerow.focus();
+            //     return false;
+            // }
+            // else if(tablecolumn.value=="")
+            // {
+            //     alert("column can not be empty");
+            //     tablecolumn.focus();
+            //     return false;
+            // }
+            // else if(isInt(tablerow.value)==false)
+            // {
+            //     alert("row must contain only digits");
+            //     tablerow.focus();
+            //     return false;
+            // }
+            // else if(isInt(tablecolumn.value)==false)
+            // {
+            //     alert("column must contain only digits");
+            //     tablerow.focus();
+            //     return false;
+            // }
+            ValidateInputAtSubmit();
             var output;
             if (loop.value==1)
             {

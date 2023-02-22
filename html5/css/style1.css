@@ -1,0 +1,20 @@
+body 
+{
+    background-color: aliceblue;
+}
+* 
+{
+    margin: 0px;
+    padding: 0px;
+}
+section 
+{
+    display: flex;
+    border:1px solid black;
+
+}
+article
+{
+    width:33%;
+    border:2px solid red;
+}

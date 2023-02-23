@@ -10,11 +10,25 @@ body
 section 
 {
     display: flex;
-    border:1px solid black;
-
+    background-color: lavender;
+    padding: 10px;
 }
 article
 {
     width:33%;
-    border:2px solid red;
+    border:1px solid black;
+}
+article>header 
+{
+    background-color: blueviolet;
+    padding:10px;
+    color:white;
+    text-align: center;
+    text-transform: uppercase;
+}
+article>footer 
+{
+    background-color: gray;
+    color:white;
+    padding:10px;
 }

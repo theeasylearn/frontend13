@@ -16,6 +16,14 @@
         {
             width:calc(33% - 10px);
         }
+        .show
+        {
+            visibility:visible;
+        }
+        .hide
+        {
+            visibility: hidden;
+        }
     </style>
 </head>
 <body>
@@ -58,8 +66,40 @@
     <script>
         function FilterImages(ButtonId,EventType,Value)
         {
-            //alert(ButtonId);
-            
+            alert(ButtonId);
+            if(ButtonId == "all")
+            {
+                var sports = document.getElementsByClassName("sports");
+                for (let index = 0; index < sports.length; index++) {
+                    var ExistingClasses = sports[index].className;
+                    sports[index].className ="hide " + ExistingClasses;
+                }
+            }
+
+            if(ButtonId == "cricket")
+            {
+                var crickets = document.getElementsByClassName("cricket");
+                for (let index = 0; index < crickets.length; index++) {
+                    sports[index].className ="show sports cricket";
+                }
+                // document.getElementsByClassName("sports").className = "hide";
+            }   
+            else if(ButtonId == "football")
+            {
+                var footballs = document.getElementsByClassName("football");
+                for (let index = 0; index < footballs.length; index++) {
+                    sports[index].className ="show sports football";
+                }
+                //document.getElementsByClassName("sports").className = "hide";
+            }  
+            else if(ButtonId == "basketball")
+            {
+                var basketballs = document.getElementsByClassName("basketball");
+                for (let index = 0; index < basketballs.length; index++) {
+                    sports[index].className ="show sports basketball";
+                }
+                //document.getElementsByClassName("sports").className = "hide";
+            } 
         }
     </script>
 </body>

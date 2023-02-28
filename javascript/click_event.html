@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #gallary
+        {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        #gallary>img 
+        {
+            width:calc(33% - 10px);
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallary</h1>
+    <table width="100%" cellpadding="10" border="1">
+        <tr>
+            <td width="25%">
+            <button id="all" onclick="FilterImages(this.id,event,value)">
+                All
+            </button>
+            </td>
+            <td width="25%">
+            <button id="cricket" onclick="FilterImages(this.id,event,value)">
+                Cricket
+            </button>
+            </td>
+            <td width="25%">
+            <button id="football" onclick="FilterImages(this.id,event,value)">
+                Football
+            </button>
+            </td>
+            <td width="25%">
+            <button id="basketball" onclick="FilterImages(this.id,event,value)">
+                Basketball
+            </button>
+            </td>
+        </tr>
+    </table>
+    <div id="gallary">
+        <img src="https://picsum.photos/150?random=1" class="sports cricket" />
+        <img src="https://picsum.photos/150?random=2" class="sports cricket" />
+        <img src="https://picsum.photos/150?random=3" class="sports cricket" />
+        <img src="https://picsum.photos/150?random=4" class="sports football" />
+        <img src="https://picsum.photos/150?random=5" class="sports football" />
+        <img src="https://picsum.photos/150?random=6" class="sports football" />
+        <img src="https://picsum.photos/150?random=7" class="sports basketball" />
+        <img src="https://picsum.photos/150?random=8" class="sports basketball" />
+        <img src="https://picsum.photos/150?random=9" class="sports basketball" />
+    </div>
+    <script>
+        function FilterImages(ButtonId,EventType,Value)
+        {
+            //alert(ButtonId);
+            
+        }
+    </script>
+</body>
+</html>

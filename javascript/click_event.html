@@ -53,34 +53,35 @@
         </tr>
     </table>
     <div id="gallary">
-        <img src="https://picsum.photos/150?random=1" class="sports cricket" />
-        <img src="https://picsum.photos/150?random=2" class="sports cricket" />
-        <img src="https://picsum.photos/150?random=3" class="sports cricket" />
-        <img src="https://picsum.photos/150?random=4" class="sports football" />
-        <img src="https://picsum.photos/150?random=5" class="sports football" />
-        <img src="https://picsum.photos/150?random=6" class="sports football" />
-        <img src="https://picsum.photos/150?random=7" class="sports basketball" />
-        <img src="https://picsum.photos/150?random=8" class="sports basketball" />
-        <img src="https://picsum.photos/150?random=9" class="sports basketball" />
+        <img src="https://picsum.photos/150?random=1" data-myclass= '1' class="sports cricket" />
+        <img src="https://picsum.photos/150?random=2" data-myclass= '2' class="sports cricket" />
+        <img src="https://picsum.photos/150?random=3" data-myclass= '3' class="sports cricket" />
+        <img src="https://picsum.photos/150?random=4" data-myclass= '4' class="sports football" />
+        <img src="https://picsum.photos/150?random=5" data-myclass= '5' class="sports football" />
+        <img src="https://picsum.photos/150?random=6" data-myclass= '6' class="sports football" />
+        <img src="https://picsum.photos/150?random=7" data-myclass= '7' class="sports basketball" />
+        <img src="https://picsum.photos/150?random=8" data-myclass= '8' class="sports basketball" />
+        <img src="https://picsum.photos/150?random=9" data-myclass= '9' class="sports basketball" />
     </div>
     <script>
+        var sports = document.getElementsByClassName("sports");
         function FilterImages(ButtonId,EventType,Value)
         {
-            alert(ButtonId);
-            if(ButtonId == "all")
+            //alert(ButtonId);
+            if(ButtonId != "all")
             {
-                var sports = document.getElementsByClassName("sports");
                 for (let index = 0; index < sports.length; index++) {
-                    var ExistingClasses = sports[index].className;
-                    sports[index].className ="hide " + ExistingClasses;
+                    console.log(sports[index].getAttribute("data-myclass"));
+                    sports[index].style.visibility = 'hidden';
+                    console.log('sports ',sports[index].style.visibility)
                 }
             }
-
             if(ButtonId == "cricket")
             {
                 var crickets = document.getElementsByClassName("cricket");
                 for (let index = 0; index < crickets.length; index++) {
-                    sports[index].className ="show sports cricket";
+                    sports[index].style.visibility = 'visible';
+                    console.log('cricket ',sports[index].style.visibility)
                 }
                 // document.getElementsByClassName("sports").className = "hide";
             }   
@@ -88,7 +89,9 @@
             {
                 var footballs = document.getElementsByClassName("football");
                 for (let index = 0; index < footballs.length; index++) {
-                    sports[index].className ="show sports football";
+                    sports[index].style.visibility = 'visible';
+                    console.log('football ',sports[index].style.visibility)
+                    
                 }
                 //document.getElementsByClassName("sports").className = "hide";
             }  
@@ -96,7 +99,8 @@
             {
                 var basketballs = document.getElementsByClassName("basketball");
                 for (let index = 0; index < basketballs.length; index++) {
-                    sports[index].className ="show sports basketball";
+                    sports[index].style.visibility = 'visible';
+                    console.log('basketball ',sports[index].style.visibility)
                 }
                 //document.getElementsByClassName("sports").className = "hide";
             } 

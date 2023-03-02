@@ -16,14 +16,6 @@
         {
             width:calc(33% - 10px);
         }
-        .show
-        {
-            visibility:visible;
-        }
-        .hide
-        {
-            visibility: hidden;
-        }
     </style>
 </head>
 <body>
@@ -53,35 +45,44 @@
         </tr>
     </table>
     <div id="gallary">
-        <img src="https://picsum.photos/150?random=1" data-myclass= '1' class="sports cricket" />
-        <img src="https://picsum.photos/150?random=2" data-myclass= '2' class="sports cricket" />
-        <img src="https://picsum.photos/150?random=3" data-myclass= '3' class="sports cricket" />
-        <img src="https://picsum.photos/150?random=4" data-myclass= '4' class="sports football" />
-        <img src="https://picsum.photos/150?random=5" data-myclass= '5' class="sports football" />
-        <img src="https://picsum.photos/150?random=6" data-myclass= '6' class="sports football" />
-        <img src="https://picsum.photos/150?random=7" data-myclass= '7' class="sports basketball" />
-        <img src="https://picsum.photos/150?random=8" data-myclass= '8' class="sports basketball" />
-        <img src="https://picsum.photos/150?random=9" data-myclass= '9' class="sports basketball" />
-    </div>
+        <img src="https://picsum.photos/150?random=1" 
+        data-myclass= '1' class="sports cricket" />
+        <img src="https://picsum.photos/150?random=2" 
+        data-myclass= '2' class="sports cricket" />
+        <img src="https://picsum.photos/150?random=3" 
+        data-myclass= '3' class="sports cricket" />
+        <img src="https://picsum.photos/150?random=4" 
+        data-myclass= '4' class="sports football" />
+        <img src="https://picsum.photos/150?random=5" 
+        data-myclass= '5' class="sports football" />
+        <img src="https://picsum.photos/150?random=6" 
+        data-myclass= '6' class="sports football" />
+        <img src="https://picsum.photos/150?random=7" 
+        data-myclass= '7' class="sports basketball" />
+        <img src="https://picsum.photos/150?random=8" 
+        data-myclass= '8' class="sports basketball" />
+        <img src="https://picsum.photos/150?random=9" 
+        data-myclass= '9' class="sports basketball" />
+    </div>  
     <script>
-        var sports = document.getElementsByClassName("sports");
+        
         function FilterImages(ButtonId,EventType,Value)
         {
             //alert(ButtonId);
+            var sports = document.getElementsByClassName("sports");
             if(ButtonId != "all")
             {
                 for (let index = 0; index < sports.length; index++) {
-                    console.log(sports[index].getAttribute("data-myclass"));
                     sports[index].style.visibility = 'hidden';
-                    console.log('sports ',sports[index].style.visibility)
+                    sports[index].style.height = '0px';
                 }
             }
             if(ButtonId == "cricket")
             {
                 var crickets = document.getElementsByClassName("cricket");
                 for (let index = 0; index < crickets.length; index++) {
-                    sports[index].style.visibility = 'visible';
-                    console.log('cricket ',sports[index].style.visibility)
+                    crickets[index].style.visibility = 'visible';
+                    crickets[index].style.height = '150px';
                 }
                 // document.getElementsByClassName("sports").className = "hide";
             }   
@@ -89,9 +90,9 @@
             {
                 var footballs = document.getElementsByClassName("football");
                 for (let index = 0; index < footballs.length; index++) {
-                    sports[index].style.visibility = 'visible';
-                    console.log('football ',sports[index].style.visibility)
-                    
+                    footballs[index].style.visibility = 'visible';
+                    footballs[index].style.height = '150px';
+
                 }
                 //document.getElementsByClassName("sports").className = "hide";
             }  
@@ -99,11 +100,18 @@
             {
                 var basketballs = document.getElementsByClassName("basketball");
                 for (let index = 0; index < basketballs.length; index++) {
-                    sports[index].style.visibility = 'visible';
-                    console.log('basketball ',sports[index].style.visibility)
+                    basketballs[index].style.visibility = 'visible';
+                    basketballs[index].style.height = '150px';
                 }
                 //document.getElementsByClassName("sports").className = "hide";
             } 
+            else 
+            {
+                for (let index = 0; index < sports.length; index++) {
+                    sports[index].style.visibility = 'visible';
+                    sports[index].style.height = '150px';
+                }
+            }
         }
     </script>
 </body>

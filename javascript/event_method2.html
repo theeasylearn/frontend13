@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #download_link
+        {
+            background-color: blue;
+            padding:10px;
+            color:white;
+            font-size: 1.5em;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event handling method 2</h1>  
+    <hr> <br/>
+    <a href="#" id="download_link">Please wait</a>
+    <script>
+        var link = document.querySelector("#download_link");
+        var seconds = 5;
+        link.onclick = function(){
+            console.log(seconds);
+            if(seconds==0)
+            {
+                console.log("click event");
+                link.setAttribute("href","1");
+                link.onclick = null;
+            }
+        };
+        setInterval(function() {
+            if(seconds==0)
+            {
+                link.innerHTML = "download";
+                link.setAttribute("href","movie.zip");
+                return;
+            }
+            console.log(seconds);
+            link.innerHTML = "please wait for " + seconds + " seconds to download";
+            seconds = seconds - 1;
+        },1000);
+
+        
+        
+    </script>
+</body>
+</html>

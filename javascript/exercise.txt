@@ -1,0 +1,5 @@
+write a javascript example to create Object Convert which has following methods 
+    getBinary
+    getOctal
+    getHexidecimal
+

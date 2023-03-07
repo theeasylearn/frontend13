@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Example of Object</h1>
+    <b>use console to see output </b>
+    <script>
+        //create object variable
+        // var object-variable-name = {
+            //   variable:value,
+            //   variable:value,
+        // }
+        var student = {
+            name:'Krunal',
+            surname:'Parekh',
+            gender:true,
+            weight:65.25,
+            age:25
+        }
+        console.log(student);
+        console.log("name " + student.name);
+        console.log("surname " + student.surname);
+        console.log("gender " + student.gender);
+        console.log("weight " + student.weight);
+        console.log("age " + student.age);  
+
+        student.age = 26;
+        console.log("now age " + student.age);  
+        student.email = 'krunal@gmail.com';
+        console.log("email " + student.email);  
+    </script>
+</body>
+</html>

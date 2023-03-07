@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Example of Object 2nd method</h1>
+    <b>use console to see output </b>
+    <script>
+        //create object variable
+        // var object-variable-name = new Object({
+            //   variable:value,
+            //   variable:value,
+            // function-name:function(){
+            //     //code
+            // }
+        // })
+        var Calculator = new Object({
+           num1 : 10,
+           num2 : 3,
+           add : function(){
+                return this.num1 + this.num2;
+           }
+           //sub, mul, div
+           
+        });
+        console.log(Calculator);
+        var ans = Calculator.add();
+        console.log("answer of addition = " + ans);
+    </script>
+</body>
+</html>

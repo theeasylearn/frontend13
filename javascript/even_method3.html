@@ -1,0 +1,59 @@
+<html>
+<head>
+  <style>
+    div 
+    {
+      color: white;    
+      display: flex;   
+      justify-content: center; 
+      align-items: center;  
+      flex-direction: column;
+    }
+    h2 {  
+        color: black;  
+    }
+    #grandparent 
+    { 
+      background-color: orange;    
+      width: 300px;    
+      height: 300px;
+    }
+    #parent 
+    {
+      color:black !important;   
+      background-color: white;
+      width: 200px;          
+      height: 200px;
+    }
+    #child {
+      background-color: green;  
+      width: 100px;  
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div id="grandparent">GrandParent
+      <div id="parent">Parent
+        <div id="child">Child</div>
+      </div>
+    </div>
+  </div>
+  </body>
+  <script>
+        let parent = document.querySelector("#parent");
+        let grandparent = document.querySelector("#grandparent");
+        let child = document.querySelector("#child");
+
+        child.addEventListener("click",function(){
+            alert("Child clicked.....");
+        },false);
+        parent.addEventListener("click",function(){
+            alert("Parent clicked.....");
+        },false);
+        grandparent.addEventListener("click",function(){
+            alert("Grand parent clicked.....");
+        },false);
+  </script>
+</html>

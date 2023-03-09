@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Example of creating object using 3rd method</h1> <hr/>
+    <b>use console</b>
+    <script>
+        //create class using 3rd method (non prototype)
+        function Cricker(name,age,match,run)
+        {
+
+            this.name = name;
+            this.age = age;
+            this.match = match;
+            this.run = run;
+            this.display = function(){
+                console.log("Name " + this.name);
+                console.log("Age " + this.age);
+                console.log("Match " + this.match);
+                console.log("Run " + this.run);
+            }
+        }
+        //object
+        var c1 = new Cricker("Shiv",45,1000,85000);
+        c1.display();
+
+        var c2 = new Cricker("Vishnu",35,500,45000);
+        c2.display();
+        
+    </script>
+
+</body>
+</html>

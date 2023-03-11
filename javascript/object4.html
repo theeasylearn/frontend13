@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Crate object 4th method</h1>
+    <hr>
+    <p>use console to see output</p>
+    <div id="output"></div>
+    <script>
+        //create class 
+        class Car
+        {
+            constructor(name,price,seat)
+            {
+                this.name = name;
+                this.price = price;
+                this.seat = seat;
+                console.log("constructor called");
+            }
+            //method
+            display()
+            {
+                console.log("Name " + this.name + " price " + this.price + " seat " + this.seat);
+            }
+            print()
+            {
+                document.getElementById("output").innerHTML+=`<p>Car Name ${this.name} <br/> Price = ${this.price} <br/> Seat ${this.seat}</p>`;
+
+            }
+        }
+        //create object
+        var c1 = new Car("Honda",1200000,4);
+        var c2 = new Car("Audi",4500000,5);
+        c1.display();
+        c2.display();
+        c1.print();
+        c2.print();
+    </script>
+</body>
+</html>

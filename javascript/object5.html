@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Crate object 4th method</h1>
+    <hr>
+    <p>use console to see output</p>
+    <table border="1" align="center" cellpadding="10">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+            </tr>
+        </thead>
+        <tbody id="output">
+
+        </tbody>
+    </table>
+    <script>
+        var count=1;
+        class Student{
+            constructor(name,email,mobile)
+            {
+                this.name = name;
+                this.email = email;
+                this.mobile = mobile;
+            }
+            AddRow()
+            {
+                document.getElementById("output").innerHTML+=`<tr><td>${count}</td><td>${this.name}</td><td>${this.email}</td><td>${this.mobile}</td></tr>`;
+                count=count+1;
+            }
+        }
+        var s1 = new Student('Krunal','krunal@gmail.com','1234567890');
+        s1.AddRow();
+
+        var s2 = new Student('Anshul','anshul@gmail.com','1122334455');
+        s2.AddRow();
+    </script>
+</body>
+</html>

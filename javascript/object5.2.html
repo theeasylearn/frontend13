@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Crate object 4th method</h1>
+    <hr>
+    <table width="80%" align="center" cellpadding="10" border="1">
+        <tr>
+            <td>
+                <input type="text" id="fullname" placeholder="name" />
+            </td>
+            <td>
+                <input type="email" id="email"  placeholder="email" />
+            </td>
+            <td>
+                <input type="number" id="mobile" placeholder="Mobile No" />
+            </td>
+            <td>
+                <input type="button" id="btnadd" value="Add Student" />
+            </td>
+        </tr>
+    </table>
+    <table width="80%" border="1" align="center" cellpadding="10">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+            </tr>
+        </thead>
+        <tbody id="output">
+
+        </tbody>
+    </table>
+    <script>
+        var count=1;
+        class Student{
+            constructor(name,email,mobile)
+            {
+                this.name = name;
+                this.email = email;
+                this.mobile = mobile;
+            }
+            AddRow()
+            {
+                console.log(this);
+                document.getElementById("output").innerHTML+=`<tr><td>${count}</td><td>${this.name}</td><td>${this.email}</td><td>${this.mobile}</td></tr>`;
+                count=count+1;
+            }
+        }
+        var btnadd = document.getElementById("btnadd");
+        var fullname = document.getElementById("fullname");
+        var email = document.getElementById("email");
+        var mobile = document.getElementById("mobile");
+
+        btnadd.onclick = function(){
+            var c1 = new Student(fullname.value,email.value,mobile.value);
+            c1.AddRow();
+        };
+    </script>
+</body>
+</html>

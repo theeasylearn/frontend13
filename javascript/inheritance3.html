@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>second example of inheritance (single)</h1>
+    <h1>third example of inheritance (multilevel)</h1>
     <div id="output">
     </div>
     <script>
@@ -34,10 +34,23 @@
                 document.getElementById("output").innerHTML += `${this.name} can teach ${this.subject}<br/>`;
             }
         }
-        var t1 = new Teacher('Ankit Patel','React js and node js');
-        t1.walk();
-        t1.talk();
-        t1.teach();
+        class Principal extends Teacher 
+        {
+            constructor(name,subject,experience){
+                super(name,subject);
+                this.experience = experience;
+            }
+            manage()
+            {
+                document.getElementById("output").innerHTML += `${this.name} has experience of school management of ${this.experience} years`;
+            }
+        }
+
+        var p1 = new Principal('Ankit','React js',3);
+        p1.walk();
+        p1.talk();
+        p1.teach();
+        p1.manage();
     </script>
 </body>
 </html>

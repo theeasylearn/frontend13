@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Example of functional binding</h1>
+    <p>use console to see output</p>
+    <script>
+       let Player = {
+         run:1000,
+         match:40,
+
+         average: function()
+         {
+            console.log('Run = ' + this.run);
+            console.log('Match = ' + this.match);
+            var avg = this.run / this.match;
+            console.log('average = ' + avg);
+         }
+       };
+
+       Player.average();
+       myaverage = Player.average.bind(Player);  //create alias for function 
+       myaverage();
+    </script>
+</body>
+</html>

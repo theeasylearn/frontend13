@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Example of how to create empty object</h1>
+    <p>use console to see output</p>
+    <script>
+        //1st method to create empty object
+        let student = new Object();
+        console.log(student);
+
+        //2nd method to create empty object
+        let user = {}; 
+        console.log(user);
+
+        //check whether object has specific property or not
+        if(user.name === undefined)
+            console.log('user has no name property');
+        else 
+            console.log('user has name property');
+        
+        user.surname = "patel";
+        
+        if(user.surname === undefined)
+            console.log('user has no surname property');
+        else 
+            console.log('user has name property ' + user.surname);
+     
+        //check object is empty or not 
+        if(Object.keys(student).length === 0)
+            console.log('student object is empty');
+        else
+            console.log('student object is has one or more keys');
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Condition Operation ? Example</h1>
+    <script>
+        let message;
+        let age = prompt("what is your age",0);
+        age = parseInt(age);
+        console.log(age);
+        // if(age>=60)
+        // {
+        //     message = "you are senior citizen";
+        // }
+        // else 
+        // {
+        //     message = "you are working professional";
+        // }
+        message = (age>=60) ? "you are senior citizen" : "you are working professional";
+        alert(message);
+    </script>
+</body>
+</html>

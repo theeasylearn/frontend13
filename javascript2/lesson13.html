@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>User defined functions</h1><hr/>
+    <div id="date"></div>
+    <hr/>
+    <div id="time"></div>
+    <script src="functions.js"></script>
+    <script>
+
+       let getCurrentDate = function(){
+            var date = new Date();
+            var message = date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear();
+            html("date",message);
+       }
+       let getCurrentTime = function(){
+            var date = new Date();
+            var message = date.getHours() + ":" + date.getMinutes();
+            html("time",message);
+       }
+       getCurrentDate();
+       getCurrentTime();
+    </script>
+</body>
+</html>

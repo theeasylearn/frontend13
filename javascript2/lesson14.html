@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrow function</h1>
+    <div id="root"></div>
+    <script>
+        //create arrow function 
+        //let function-name = (arguments) => single line code 
+        let  add = (num1,num2) => num1 + num2;
+        let  sub =  (num1,num2) => num1 - num2;
+        let mul = (num1,num2) => num1 * num2;
+        let div = (num1,num2) => num1 / num2;
+
+        var num1 = parseInt(prompt("enter first number",0));
+        var num2 = parseInt(prompt("enter second number",0));
+        var root = document.getElementById("root");
+        var result = add(num1,num2); //calling arrow function 
+        root.innerHTML = "result of addition " + result;
+        result = sub(num1,num2);
+        root.innerHTML += "<br/> result of substraction " + result;
+        root.innerHTML += "<br/> result of multiplication " + mul(num1,num2);
+        root.innerHTML += "<br/> result of division " + div(num1,num2);
+        
+    </script>
+</body>
+</html>

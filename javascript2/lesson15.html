@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Default argument function</h1>
+    <table>
+        <tr>
+            <td>with 3 argument</td>
+            <td id="td1"></td>
+        </tr>
+        <tr>
+            <td>with 2 argument</td>
+            <td id="td2"></td>
+        </tr>
+        <tr>
+            <td>with 3 argument</td>
+            <td id="td3"></td>
+        </tr>
+        
+    </table>
+    <script src="functions.js"></script>
+    <script>
+        function getInterest(amount,rate=15,year=1)
+        {
+            console.log(amount,rate,year);
+            let interest = (amount*rate*year) / 100;
+            return interest;
+        }
+
+        var amount = parseInt(prompt("Enter amount",0));
+        var rate = parseInt(prompt("Enter rate",0));
+        var year = parseInt(prompt("Enter year",0));
+        var result = getInterest(amount,rate,year);
+        // document.getElementById("td1").innerHTML = result;
+        html("td1",result);
+        result = getInterest(amount,rate);
+        html("td2",result);
+
+        result = getInterest(amount);
+        html("td3",result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td 
+        {
+            height: 50px;
+            background-color: aliceblue;
+        }
+        .highlight
+        {
+            background-color: gray;
+            font-size: 20px;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <table border="2" align="center" width="80%">
+        <tr>
+            <td ></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <script>
+        var tds = document.getElementsByTagName("td");
+        // alert(srnos.length);
+        for(var index=0;index<tds.length;index=index+1)
+        {
+            tds[index].innerHTML= (index+1);
+            tds[index].className = "highlight";
+        }
+    </script>
+</body>
+</html>

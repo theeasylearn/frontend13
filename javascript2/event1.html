@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Maths Calculator</h1> <hr/>
+    <form action="success.html">
+        <table align="center" border="2" width="50%">
+            <tr>
+                <td>First number</td>
+                <td>
+                    <input type="number"  id="num1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Second number
+                </td>
+                <td>
+                    <input type="number"  id="num2">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input onclick="calculate(this.id,event,value);" type="button" value="Addition" id="add" />
+                    <input onclick="calculate(this.id,event,value);" type="button" value="Substration" id="sub" />
+                    <input onclick="calculate(this.id,event,value);" type="button" value="Multiplication" id="mul" />
+                    <input onclick="calculate(this.id,event,value);" type="button" value="Division" id="div" />
+                </td>
+            </tr>
+            <tr>
+                <td id="output" colspan="2" align="center">
+    
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        var num1 = document.getElementById("num1");
+        var num2 = document.getElementById("num2");
+        var result=null;
+        var calculate = function(buttonid,event,value)
+        {
+            // alert(buttonid);
+            if(buttonid=='add')
+                result = parseInt(num1.value) + parseInt(num2.value);
+            else if(buttonid=='sub')
+                result = parseInt(num1.value) - parseInt(num2.value);
+            else if(buttonid=='mul')
+                result = parseInt(num1.value) * parseInt(num2.value);
+            else if(buttonid=='div')
+                result = parseInt(num1.value) / parseInt(num2.value);
+
+            document.getElementById("output").innerHTML = result;
+                
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="success.html" method="post" onsubmit="return ValidateForm();">
+        <table border="2" align="center" cellpadding="10">
+            <tr>
+                <td>Email address</td>
+                <td>
+                    <input type="email" id="email" >
+                </td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td>
+                    <input type="number" id="mobile">
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" id="password">
+                </td>
+            </tr>
+            <tr>
+                <td>Confirm password</td>
+                <td>
+                    <input type="password" id="password2" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="submit form">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function ValidateForm()
+        {
+            alert("form submitted");
+            return true;
+        }
+    </script>
+</body>
+</html>

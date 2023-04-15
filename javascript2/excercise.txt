@@ -1,0 +1,4 @@
+1) create web page that accept one number from user. it has two button square and qube. when user click on square calculate and display square of given number. when user click on qube button calculate and display qube of given number 
+
+2) create web page that accept hours in one text box and minute in another text box. it has button "count days" which will calculate days from given hours and minute  and display it. and it also has button "count seconds" which will calculate seconds from given hour and minute and display it. 
+

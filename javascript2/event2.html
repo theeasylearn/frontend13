@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* internal stylesheet */
+        .error
+        {
+            border:2px solid red;
+            background-color: pink;
+        }
+    </style>
 </head>
 <body>
     <form action="success.html" method="post" onsubmit="return ValidateForm();">
@@ -12,25 +20,26 @@
             <tr>
                 <td>Email address</td>
                 <td>
-                    <input type="email" id="email" >
+                    <input type="email" id="email"    onblur="ValidateThis(this.id,event,value);" />
                 </td>
             </tr>
             <tr>
                 <td>Mobile</td>
                 <td>
-                    <input type="number" id="mobile">
+                    <input type="number" id="mobile"   onblur="ValidateThis(this.id,event,value);" />
                 </td>
             </tr>
             <tr>
                 <td>Password</td>
                 <td>
-                    <input type="password" id="password">
+                    <input type="password" id="password"  
+                    onblur="ValidateThis(this.id,event,value);" />
                 </td>
             </tr>
             <tr>
                 <td>Confirm password</td>
                 <td>
-                    <input type="password" id="password2" />
+                    <input type="password" id="password2" onblur="ValidateThis(this.id,event,value);"  />
                 </td>
             </tr>
             <tr>
@@ -44,8 +53,58 @@
     <script>
         function ValidateForm()
         {
-            alert("form submitted");
+            // alert("form submitted");
+            var email = document.getElementById("email");
+            var password = document.getElementById("password");
+            var password2 = document.getElementById("password2")
+            var mobile = document.getElementById("mobile");
+            if(email.value=="")
+            {
+                alert('email can not be blank');
+                email.focus();
+                email.className='error';
+                return false;
+            }
+            else if(password.value=='')
+            {
+                alert('password can not be blank');
+                password.focus();
+                password.className='error';
+                return false;
+            }
+            else if(password2.value=='')
+            {
+                alert('confirm password can not be blank');
+                password2.focus();
+                password2.className='error';
+                return false;
+            }
+            else if(mobile.value=='')
+            {
+                alert('mobile can not be blank');
+                mobile.focus();
+                mobile.className='error';
+                return false;
+            }
+            else if(password.value!='' && password2.value!='' && password.value!=password2.value)
+            {
+                alert('password and confirm password must be same');
+                return false;
+            }
+            else if(mobile.value!='' && mobile.value.length<10)
+            {
+                alert('not a valid mobile no');
+                mobile.focus();
+                return false;
+            }
             return true;
+        }
+        function ValidateThis(id,event,value)
+        {
+            if(value!='')
+            {
+                document.getElementById(id).className = "";
+            }
         }
     </script>
 </body>

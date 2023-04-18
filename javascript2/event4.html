@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>example of handling event using 2nd method</h1>
+    <hr>
+    <form action="success.html" method="post" id="myform" >
+        <table border="2" align="center" cellpadding="10">
+            <tr>
+                <td>Email address</td>
+                <td>
+                    <input type="email" id="email"  />
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" id="password"  />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="submit form" id="login" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        var myform = document.getElementById("myform");
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+        var login = document.getElementById("login");
+
+        var count=0;
+        myform.onsubmit = function(){
+           if(email.value=='admin@gmail.com' && password.value=='123123')
+           {
+                alert("login sucessfull");
+                return true;
+           }
+           else 
+           {
+                alert('login failed');
+                count++;
+                if(count==3)
+                    {
+                        myform.onsubmit = null;
+                        login.setAttribute('disabled','disabled');
+                    }
+                return false;
+           }
+          
+        }
+    </script>
+</body>
+</html>

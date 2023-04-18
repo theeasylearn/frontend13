@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Event handling using 2nd method</h1>
+    <input type="button" id="gettime" value="get Current Time" />
+    <h1 id="output"></h1>
+    <script>
+        var gettime = document.querySelector("#gettime");
+        gettime.onclick = function(){
+            // alert("hi");
+            let now = new Date();
+            let hour = now.getHours(); //return current hours 
+            let minute = now.getMinutes(); //return current minute
+            let seconds = now.getSeconds(); //return seconds 
+            let time = hour + ":" + minute + ":" + seconds;
+            document.getElementById("output").innerHTML = time;
+        }
+    </script>
+</body>
+</html>

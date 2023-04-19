@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create object using first method</h1>
+    <hr>
+    <p>use console to see output</p>
+    <script>
+        var student = {
+            name: 'Shruti Vaghasiya',
+            age : 20,
+            height : 5.7,
+            gender : false
+        };
+        console.log(student);
+
+        student.name = 'Zelix barad';
+        student.age = 19;
+        student.height = 5.2;
+        
+        console.log('name',student.name);
+        console.log('age',student.age);
+        console.log('height',student['height']);
+        console.log('gender',student['gender']);
+    </script>
+</body>
+</html>

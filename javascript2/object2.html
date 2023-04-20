@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        thead>tr
+        {
+            background-color: black;
+            color:white;
+        }
+        tbody>tr:nth-child(odd)
+        {
+            background-color: antiquewhite;
+        }
+        tbody>tr:nth-child(even)
+        {
+            background-color:brown;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Creating Object using 2nd method</h1>
+    <hr>
+    <table border="2" align="center" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>HTML</th>
+                <th>CSS</th>
+                <th>Javascript</th>
+                <th>total</th>
+                <th>Average</th>
+            </tr>
+        </thead>
+        <tbody id="output">
+            <!-- <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr> -->
+        </tbody>
+    </table>
+<script>
+    var output = document.getElementById("output");
+    var Student = new Object({
+        name : '',
+        html:0,
+        css:0,
+        javascript:0,
+        setData: function(name,html,css,javascript)
+        {
+            this.name = name;
+            this.html = html;
+            this.css = css;
+            this.javascript = javascript;
+        },
+        addRow: function()
+        {
+            output.innerHTML+=`<tr><td>${this.name}</td><td>${this.html}</td><td>${this.css}</td><td>${this.javascript}</td><td>${this.html + this.css + this.javascript}</td><td>${(this.html + this.css + this.javascript)/3}</td></tr>`;
+        }
+    });
+
+    var m1 = Student;
+    m1.setData('zelix',75,85,95);
+    m1.addRow();
+
+    var m2 = Student;
+    m1.setData('Monika',70,80,90);
+    m1.addRow();
+
+    var m3 = Student;
+    m1.setData('amisha',75,85,95);
+    m1.addRow();
+
+    var m4 = Student;
+    m1.setData('meet',70,80,90);
+    m1.addRow();
+
+</script>
+</body>
+</html>

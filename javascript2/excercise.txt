@@ -2,3 +2,6 @@
 
 2) create web page that accept hours in one text box and minute in another text box. it has button "count days" which will calculate days from given hours and minute  and display it. and it also has button "count seconds" which will calculate seconds from given hour and minute and display it. 
 
+3) create web page that will display IPL points table using 2nd method of creating object in javascript. use example object2.html 
+
+4) create web page that will display any 5 country name,capital, currency detail as well as flag as image in table table using 3rd method of creating object in javascript. use example object2.html 

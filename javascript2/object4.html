@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ES6 way to create class & object</h1>
+    <form action="success.html">
+        <table align="center" border="2" width="50%">
+            <tr>
+                <td>First number</td>
+                <td>
+                    <input type="number"  id="num1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Second number
+                </td>
+                <td>
+                    <input type="number"  id="num2">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input onclick="calculate(this.id,event,value);" type="button" value="Addition" id="add" />
+                    <input onclick="calculate(this.id,event,value);" type="button" value="Substration" id="sub" />
+                    <input onclick="calculate(this.id,event,value);" type="button" value="Multiplication" id="mul" />
+                    <input onclick="calculate(this.id,event,value);" type="button" value="Division" id="divi" />
+                </td>
+            </tr>
+            <tr>
+                <td id="output" colspan="2" align="center">
+    
+                </td>
+            </tr>
+        </table>
+    </form>
+    <table border="1" align="center" cellpadding="10">
+        <tr>
+            <td>Addition</td>
+            <td>substraction</td>
+            <td>multiplication</td>
+            <td>Division</td>
+        </tr>
+        <tr>
+            <td id="addition"></td>
+            <td id="substraction"></td>
+            <td id="multiplication"></td>
+            <td id="div"></td>
+        </tr>
+    </table>
+    <script>
+        class MyMath
+        {
+            constructor(num1,num2)
+            {
+                console.log('constructor called');
+                this.num1 = num1;
+                this.num2 = num2;
+            }
+            add()
+            {
+                document.getElementById("addition").innerHTML= parseInt(this.num1) + parseInt(this.num2);
+            }
+            sub()
+            {
+                document.getElementById("substraction").innerHTML= parseInt(this.num1) - parseInt(this.num2);
+            }
+            mul()
+            {
+                document.getElementById("multiplication").innerHTML= parseInt(this.num1) * parseInt(this.num2);
+            }
+            div()
+            {
+                document.getElementById("div").innerHTML= parseInt(this.num1) / parseInt(this.num2);
+            }
+        }
+        var num1 = document.getElementById("num1");
+        var num2 = document.getElementById("num2");
+        var result=null;
+        var calculate = function(buttonid,event,value)
+        {
+            var m1 = new MyMath(num1.value,num2.value);
+            // alert(buttonid);
+            if(buttonid=='add')
+                m1.add();
+            else if(buttonid=='sub')
+                m1.sub();
+            else if(buttonid=='mul')
+                m1.mul();
+            else if(buttonid=='divi')
+                m1.div();
+                
+        }
+       
+    </script>
+</body>
+</html>

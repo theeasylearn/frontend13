@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Inheritance Example</h1> <hr/>
+    <div id="output"></div>
+    <script>
+        class Person /* parent/super/root class */
+        {
+            constructor(name)
+            {
+                this.name = name;
+                console.log('Person constructor called... ');
+            }
+            walk()
+            {
+                document.getElementById("output").innerHTML+=`${this.name} can walk <br/>`;
+            }
+            talk()
+            {
+                document.getElementById("output").innerHTML+=`${this.name} can talk <br/>`;
+            }
+            sleep()
+            {
+                document.getElementById("output").innerHTML+=`${this.name} can sleep <br/>`;
+            }
+            eat()
+            {
+                document.getElementById("output").innerHTML+=`${this.name} can eat <br/>`;
+            }
+        }
+        //sub/child/derived class 
+        class Student extends Person
+        {
+            constructor(name)
+            {
+                super(name); //calling parent class constructor
+                console.log('Student class constructor called....');
+            }
+            read()
+            {
+                document.getElementById("output").innerHTML+=`${this.name} can read <br/>`;
+            }
+            write()
+            {
+                document.getElementById("output").innerHTML+=`${this.name} can write <br/>`;
+            }
+        }
+        //create object
+        var s1= new Student('Meet Italiya');
+        s1.walk();
+        s1.eat();
+        s1.sleep();
+        s1.talk();
+        s1.read();
+        s1.write();
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Inheritance Example 2(single level)</h1> <hr/>
+    <div id="output"></div>
+    <script src="CommonClass.js"></script>
+    <script>
+        class Person extends MyDocument
+        {
+            
+            constructor(name)
+            {
+                super(); //compulsory
+                this.name = name;
+                console.log('Person constructor called... ');
+            }
+            walk()
+            {
+                super.html("output",`${this.name} can walk <br/>`);
+            }
+            talk()
+            {
+                super.html("output",`${this.name} can talk <br/>`)
+            }
+            sleep()
+            {
+                super.html("output",`${this.name} can sleep <br/>`);
+            }
+            eat()
+            {
+                super.html("output",`${this.name} can eat <br/>`);
+            }
+        }
+        var p1 = new Person('Ankit Patel');
+        p1.walk();
+        p1.talk();
+        p1.eat();
+        p1.sleep();
+        alert(p1.html('output'));
+    </script>
+</body>
+</html>

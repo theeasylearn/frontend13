@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Inheritance Example (multilevel inheritance)</h1> <hr/>
+    <div id="output">use console to see output</div>
+    <script>
+        class KG
+        {
+            constructor(grams)
+            {
+                this.grams = grams;
+            }
+            getKG()
+            {
+                return this.grams / 1000;
+            }
+        }
+        class Kwintle extends KG
+        {
+            constructor(grams)
+            {
+                super(grams);
+            }
+            getKwintle()
+            {
+                return super.getKG() / 20;
+            }
+        }
+        class Ton extends Kwintle
+        {
+            constructor(grams)
+            {
+                super(grams);
+            }
+            getTon()
+            {
+                return super.getKwintle() / 50;
+            }
+        }
+        var t1 = new Ton(12500000);
+        console.log(t1.getKG());
+        console.log(t1.getKwintle());
+        console.log(t1.getTon());
+    </script>
+</body>
+</html>

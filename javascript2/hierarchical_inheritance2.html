@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Inheritance Example 2(hierarchical)</h1> <hr/>
+    <table id="output" border="2" align="center" cellpadding="10">
+
+    </table>
+    <script src="CommonClass.js"></script>
+    <script>
+        class MyTable extends MyDocument
+        {
+            
+            constructor(rows,cols)
+            {
+                super(); //compulsory
+                this.rows = rows;
+                this.cols = cols
+                console.log('MyTable constructor called... ');
+            }
+            generate()
+            {
+                for(var j=1;j<=parseInt(this.rows);j=parseInt(j)+1)
+                {
+                    super.html("output","<tr>");
+                    var temp =''; 
+                    for(var i=1;i<=parseInt(this.cols);i=parseInt(i)+1)
+                    {
+                        temp+=`<td>${i}</td>`;
+                    }
+                    super.html("output",temp + "</tr>");
+                }
+               
+            }
+        }
+        
+        var t1 = new MyTable(10,3);
+        t1.generate();
+    </script>
+</body>
+</html>

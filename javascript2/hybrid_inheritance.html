@@ -50,6 +50,21 @@
                
             }
         }
+        class MyTableWithHeading extends MyTable
+        {
+            constructor(rows,cols,heading)
+            {
+                super(rows,cols); //compulsory
+                this.heading = heading;
+                console.log('MyTableWithHeading constructor called... ');
+            }
+            //method Overridding
+            generate()
+            {
+                super.html("output",`<h1>${this.heading}</h1>`);
+                super.generate();
+            }
+        }
         class MyDiv extends MyDocument
         {
             constructor(count,content)
@@ -67,7 +82,7 @@
                 }
             }
         }
-        var t1 = new MyTable(10,3);
+        var t1 = new MyTableWithHeading(10,3,'this is table heading');
         t1.generate();
 
         var m1 = new MyDiv(15,'the easylearn academy, bhavnagar');

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Empty object</h1>
+    <p>use console to check output</p>
+    <script>
+        //empty object (1st method)
+        var user = new Object();
+
+        //empty object (2nd method)
+        var book = {};
+
+        console.log('User ',user);
+        console.log('Book ',book);
+
+        user.name = 'Ankit Patel';
+        user['age'] = 37;
+        console.log('User ',user);
+        user['age'] = 38;
+        console.log('User ',user);
+
+        
+    </script>
+</body>
+</html>

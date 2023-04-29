@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check property exists or not </h1>
+    <p>use console to check output</p>
+    <script>
+        //empty object (1st method)
+        var user = new Object();
+        user.name = 'Ankit Patel';
+        user['age'] = 37;
+        console.log('User ',user);
+        if(user.name === undefined)
+            console.log('name property does not exist')
+        else
+            console.log('name property does exist')
+        
+        if(user.email === undefined)
+            console.log('email property does not exist')
+        else
+            console.log('email property does exist')
+
+        if('mobile' in user)
+            console.log('mobile property does exist')
+        else
+            console.log('mobile property does not exist')
+
+        
+    </script>
+</body>
+</html>

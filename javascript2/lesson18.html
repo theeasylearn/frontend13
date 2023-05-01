@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array In javascript</h1>
+    <hr>
+    <p>use console to see output</p>
+    <script>
+        //let us create array in javascript
+        let fruits = ['apple','banana','mango','pinapple','orange'];
+        //Position(index) 0       1         2        3         4
+        console.log(fruits);
+        let size = fruits.length; //length return size of the array 
+        console.log('size of array',size);
+        //change value at specific index(position)
+        fruits[0] = 'Graps';
+        console.log(fruits);
+        fruits[2] = 'water melon';
+        console.log(fruits[2]);
+
+        //remove value from array 
+        delete fruits[3];
+        console.log(fruits);
+
+        //add new value into array
+        fruits.push('strawbarry'); //add new value at the end of list 
+        console.log(fruits);
+        
+    </script>
+</body>
+</html>

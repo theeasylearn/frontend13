@@ -15,3 +15,5 @@
         getKG() return KG 
         getKwintle() return Kwintle 
         getTon() return Ton 
+
+7) display 5 stduent name, html, css, javascript, bootstrap marks and all subject marks's total and average in html table tag using array and map function 

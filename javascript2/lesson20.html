@@ -13,9 +13,9 @@
     <script>
         //let us create array in javascript
         let fruits = ['apple','banana','mango','pinapple','orange','bluebarry'];
-        fruits.map(function(item){
+        fruits.map(function(SingleFruit){
             //fruits.map will execute no of times equal to no if fruit in array (6)
-            output.innerHTML+=`<li>${item}</li>`;
+            output.innerHTML+=`<li>${SingleFruit}</li>`;
         });
         var fruits2 = fruits.map(function(item){
             return item.toUpperCase();

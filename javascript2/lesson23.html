@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Example of for each loop</h1> <hr/>
+    <p>use console to see output</p>
+    <script>
+        let book = {
+            name : 'the javascript',
+            price : 200,
+            pages : 250,
+            author : 'Ankit Patel',
+            publisher : 'the easylearn academy',
+        }
+        console.log(book);
+        for (let key in book)
+        {
+            console.log(key,book[key]);
+        }
+    </script>
+</body>
+</html>

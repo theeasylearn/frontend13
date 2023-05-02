@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ES6 Spread operator</h1>
+    <p>use console</p>
+    <script>
+        var team1 = ['monika','prinsi','zelix','sita'];
+        var team2 = ['shruti','jahanvi','sita'];
+        console.log(team1);
+        console.log(team2);
+        var team3 = [...team1,...team2];
+        console.log(team3);
+
+
+        var product = {
+            'name' : "I-Phone",
+            'stock' : 10,
+            'price' : 45000,
+        };
+        var update = {
+            'price' : 99000,
+            'stock' : 20,
+        }
+        console.log(product);
+        console.log(update);
+
+        //update product with update object
+        product = {...product,...update};
+        console.log('updated product',product);
+    </script>
+</body>
+</html>

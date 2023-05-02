@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array In javascript with map</h1>
+    <hr>
+    <table border="2" align="center" width="80%">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+            </tr>
+        </thead>
+        <tbody id="output">
+
+        </tbody>
+    </table>
+    <script>
+        var output = document.getElementById('output');
+        var students = [
+            {'name':'Monika','email':'monika@gmail.com','mobile':'1122334455'},
+            {'name':'prinsi','email':'prinsi@gmail.com','mobile':'2233445566'},
+            {'name':'amisha','email':'amisha@gmail.com','mobile':'3344556677'},
+            {'name':'zelix','email':'zelix@gmail.com','mobile':'4455667788'}
+        ];
+        var count=1;
+        students.map(function(student){
+            let {name:Name,email:Email,mobile:Mobile} = student; //object destructring
+            output.innerHTML += `<tr><td>${count}</td><td>${Name}</td><td>${Email}</td><td>${Mobile}</td></tr>`;
+            count=parseInt(count) + 1;
+        });
+        // for(let index=0;index<students.length;index++)
+        // {
+        //         output.innerHTML += `<tr><td>${index+1}</td><td>${students[index].name}</td><td>${students[index].email}</td><td>${students[index].mobile}</td></tr>`;
+        // }
+    </script>
+</body>
+</html>

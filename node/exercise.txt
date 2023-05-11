@@ -1,0 +1,5 @@
+create module that 
+        has function getteam will return all the team name of IPL as list(array)
+        has function getplayer will return  any 3 team player of given IPL team as list
+            input : Gujarat titan 
+            output : ['hardik pandya','Gill','Rashid khan']

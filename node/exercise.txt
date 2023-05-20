@@ -3,3 +3,8 @@ create module that
         has function getplayer will return  any 3 team player of given IPL team as list
             input : Gujarat titan 
             output : ['hardik pandya','Gill','Rashid khan']
+
+create nodejs that return fruit season, color, and price per kg of given fruit as json object of 5 fruits 
+input : apple
+
+create nodejs that return country capital,continent, president name  of given country of any 5 country. 

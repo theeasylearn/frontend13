@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Contact Us - School Name</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Contact us</h1>
-    <hr/>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat accusamus tempore voluptas reiciendis harum sint, iusto, mollitia cumque nihil saepe eligendi, aliquam adipisci minima iure quidem nam distinctio consectetur ad eaque necessitatibus amet tenetur numquam sit! Nulla eligendi enim voluptatum sequi dolorum tempora quibusdam, autem possimus, excepturi dicta eveniet optio deleniti. Iure veniam, aliquam veritatis ipsam a harum quidem ipsa animi earum, quibusdam consectetur, quasi quia sequi laborum officiis omnis dolorum perspiciatis. Unde expedita doloremque excepturi, iusto exercitationem totam cupiditate pariatur illo aspernatur dolorem magnam obcaecati praesentium sapiente est dolores assumenda voluptas voluptates aliquid accusamus tempore modi! Nobis beatae incidunt illum reprehenderit amet impedit suscipit cupiditate molestiae perferendis deleniti voluptate dolore laborum fugit blanditiis eveniet, possimus eaque at porro vero animi non accusantium? Pariatur, aspernatur ab. Delectus libero quos quaerat. Recusandae quasi nisi voluptatem voluptatum dignissimos! Placeat aliquam veritatis cupiditate debitis harum, reprehenderit magnam animi vero dolore alias facilis doloremque asperiores minus deleniti perferendis totam quae rerum! Nesciunt tenetur, possimus voluptatem optio tempore neque maiores nihil inventore, numquam rem omnis quia minus. Vel obcaecati nam dolores, nostrum sunt reiciendis eum nobis qui similique dolorum, aut nesciunt maiores modi harum eligendi eius cum alias temporibus fugiat ullam assumenda asperiores dolor. Velit.</p>
+  <header class="bg-dark text-light text-center py-5">
+    <h1 class="display-4">School Name</h1>
+  </header>
+  
+  <main class="container my-5">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or would like to learn more about our school, please feel free to reach out to us.</p>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+      
+      <div class="col-md-6">
+        <h3>Contact Information</h3>
+        <p>Email: info@schoolname.com</p>
+        <p>Phone: 123-456-7890</p>
+        <p>Address: 123 Main St, City, State, ZIP</p>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="bg-light text-center py-3">
+    <p>&copy; 2023 School Name. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

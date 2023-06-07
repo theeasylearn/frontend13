@@ -16,20 +16,38 @@ app.get("/players",function(request,response){
 
 //localhost:5000/players/rohit 
 
-app.get("/players/:name",function(request,response){
-    var name = request.params.name;
+app.get("/players/:surname",function(request,response){
+    var surname = request.params.surname;
     var index = 0;
+    var result = [];     //empty array 
     while(index<5)
     {
-        if (name == players[index]['name'])
+        if (surname == players[index]['surname'])
         {
-            response.json(players[index]);
-            break;
+            result.push(players[index]); 
         }
         index++;
     }
-    if(index==5)
+
+    if(result.length == 0)
         response.json({'message':'no player found'})
+    else 
+        response.send(result);
+});
+
+app.get("/players/:name/:surname",function(request,response){
+    var name = request.params.name;
+    var surname = request.params.surname;
+    var player_to_search = {'name':name,'surname':surname};
+    //console.log(player_to_search);
+    var result = players.filter((player) => {
+        if( JSON.stringify(player) === JSON.stringify(player_to_search) )
+            return player;
+    });
+    if(result.length == 0)
+        response.json({'message':'no player found'});
+    else
+        response.send(result);
 });
 app.listen(5000);
 console.log('ready to accept request');

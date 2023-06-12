@@ -1,0 +1,23 @@
+Create table 
+------------------------------------------
+create table student(
+    id integer PRIMARY KEY AUTO_INCREMENT,
+    name varchar(64) not null,
+    gender int(1) not null, 
+    dob date not null,
+    email varchar(64) not null unique,
+    mobile varchar(12) not null unique, 
+    photo varchar(255),
+    inserted_at datetime default CURRENT_TIMESTAMP
+);
+
+insert row 
+-----------------------------
+
+insert(save) new row into table 
+1st method
+syntax
+insert into table-name values(value1,value2,value3,value4,value5)
+
+insert into subject values (NULL,'Node js','serverside runtime enviroment','nodejs.png',0,'P');
+

@@ -21,3 +21,33 @@ insert into table-name values(value1,value2,value3,value4,value5)
 
 insert into subject values (NULL,'Node js','serverside runtime enviroment','nodejs.png',0,'P');
 
+2nd method 
+syntax
+insert into table-name (field-name) values (value1)
+example
+insert into subject (name,detail,photo,type) values ('Express js','server side scripting framework','express.jpg','P')
+
+insert into subject (name,type) values ('MYSQL','P');
+
+DELETE 
+syntax 
+delete from table [condition]
+
+delete from subject where id=7
+
+delete from subject where name='mysql'
+
+UPDATE 
+update tablename set field=value,field=value,field=value [condition]
+
+example
+update subject set type='x'
+update subject set type='t' where id>=2
+update subject set type='p' where photo='html.png'
+update subject set name='Node',detail='serverside technology',type='p' where id=4
+
+
+select 
+fetch all fields & all rows from table 
+fetch alll cusotmers 
+select * from customers 

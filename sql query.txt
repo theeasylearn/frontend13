@@ -49,5 +49,42 @@ update subject set name='Node',detail='serverside technology',type='p' where id=
 
 select 
 fetch all fields & all rows from table 
-fetch alll cusotmers 
+
+fetch all customers 
 select * from customers 
+
+fetch only required fields 
+fetch customernumber, name, country, state and city 
+select customernumber,customername,country,state,city from customers
+
+fetch only limted number of rows
+
+fetch customernumber, name, country, state and city of first 50 customers 
+select customernumber,customername,country,state,city from customers limit 0,50
+
+fetch customernumber, name, country, state and city of 50 customers from 51th customers
+select customernumber,customername,country,state,city from customers limit 51,50
+
+fetch customernumber, name, country, state and city of 50 customers from 101 customers
+select customernumber,customername,country,state,city from customers limit 101,50
+
+
+fetch customernumber, name, country, state and city of customers in name asending order (a to z)
+select customernumber,customername,country,state,city from customers order by customername
+
+fetch customernumber, name, country, state and city of customers in name desecnding order (z to a)
+select customernumber,customername,country,state,city from customers order by customername desc
+
+fetch customernumber, name, country, state and city of customers in name wise asending order (a to z) of first 50 customers 
+select customernumber,customername,country,state,city from customers order by customername limit 0,50
+
+fetch customernumber, name, country, state and city of customers in country wise then state wise and then city wise of first 50 customers 
+
+select customernumber,customername,country,state,city from customers order by country,state,city limit 0,50
+
+filter rows as per requirement (condition)
+
+fetch only those customer customernumber, name, country, state and city who are from us country 
+select customernumber,customername,country,state,city from customers where country=''
+
+

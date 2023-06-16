@@ -85,6 +85,78 @@ select customernumber,customername,country,state,city from customers order by co
 filter rows as per requirement (condition)
 
 fetch only those customer customernumber, name, country, state and city who are from us country 
-select customernumber,customername,country,state,city from customers where country=''
+select customernumber,customername,country,state,city from customers where country='usa'
 
+fetch only those customer customernumber, name, country, state and city who are from us country in asending order of customername
+
+select customernumber,customername,country,state,city from customers where country='usa'
+order by customername
+
+fetch first 50 customer's customernumber, name, country, state and city who are from us country in asending order of customername
+
+select customernumber,customername,country,state,city from customers where country='usa'
+order by customername limit 0,50
+
+fetch first 50 customer's customernumber, name, country, state and city who are from us country and state is ca in asending order of customername
+
+select customernumber,customername,country,state,city from customers where country='usa'
+and state='ca' order by customername limit 0,50
+
+fetch first 100 customer's customernumber, name, country, state and city who are from us country or france or canada and display in asending order of country 
+
+select customernumber,customername,country,state,city from customers where country='usa' or country='france' or country='canada' order by country limit 0,100
+
+sql functions
+------------------------------------------------------------------------------------------
+aggregate functions 
+function which always return single value is called aggregate function 
+
+display total payments amount 
+select sum(amount) as total from payments 
+
+display minimum payments amount 
+select min(amount) as minimum_payment from payments 
+
+display maximum payments amount 
+select max(amount) as maximum_payment from payments 
+
+display average payments amount 
+select avg(amount) as average_payment from payments 
+
+display count of payment
+select count(*) as count from payments 
+
+aggregate functions with condition 
+findout total payment on 19-05-2023
+select sum(amount) as total from payments where paymentdate = '2005-05-19'
+
+findout total payment on in year 2005
+select sum(amount) as total from payments where paymentdate >= '2005-01-01' and paymentdate<='2005-12-31'
+
+group by clause (used with aggregate function only)
+findout count of customer coutry wise 
+SELECT count(*),country FROM `customers` group by country
+
+findout customerwise total payment amount 
+select sum(amount),customernumber as total from payments group by customernumber
+
+findout customerwise total payment amount, no of payments
+select count(*),sum(amount),customernumber as total from payments group by customernumber
+
+having clause (used with aggregate function and group by clause only)
+---------------------------------
+findout  customerwise total payment amount of those customer who have paid < 100000
+select sum(amount),customernumber as total from payments group by customernumber having sum(amount)<100000
+
+
+join query
+--------------------------------------
+when we need to fetch data from more then one table we use join query 
+
+display customer number his name, country state, city and his payment detail 
+
+select customers.customernumber,customername,country, state, city, payments.* from customers, payments where customers.customernumber=payments.customernumber
+
+or 
+select c.customernumber,customername,country, state, city, p.* from customers c, payments p where c.customernumber=p.customernumber
 

@@ -148,7 +148,6 @@ having clause (used with aggregate function and group by clause only)
 findout  customerwise total payment amount of those customer who have paid < 100000
 select sum(amount),customernumber as total from payments group by customernumber having sum(amount)<100000
 
-
 join query
 --------------------------------------
 when we need to fetch data from more then one table we use join query 
@@ -159,4 +158,16 @@ select customers.customernumber,customername,country, state, city, payments.* fr
 
 or 
 select c.customernumber,customername,country, state, city, p.* from customers c, payments p where c.customernumber=p.customernumber
+
+display customer name, no and order detail 
+select customernumber,customername from customers
+
+select * from orders
+select c.customernumber,customername, o.* from customers c, orders o where c.customernumber=o.customernumber
+
+display customer name, no,city,state,country along with total payment amount 
+select customernumber,customername,city,state,country from customers
+select sum(amount) from payments 
+
+select c.customernumber,customername,city,state,country,sum(amount) from customers c, payments p where p.customernumber=c.customernumber group by c.customernumber
 

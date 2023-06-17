@@ -1,0 +1,31 @@
+SQL test 
+
+1) write a query to insert a new record in to payment table
+insert into payments values (112,'abcd111','2005-05-20',999)
+
+2) write a query to delete record from customer table whose customerNumber is 120
+delete from customers where customernumber = 120
+
+3) update customer table increase creditLimit by 10000 of all customers 
+update customers set creditlimit=creditlimit+10000
+
+4) display those customer detail whose country is USA and state is ca
+select * from customers where country='usa' and state='ca'
+
+5) display those customer detail whose companyName has co. at any place
+select * from customers where customerName like '%co%'
+
+6) display total payment, average payment made in year 2004
+select sum(amount),avg(amount) from payments where paymentdate>='2004-01-01' and paymentdate<='2004-12-31'
+
+7) display those payment detail which has been made in may-2004
+select * from payments where paymentdate>='2004-05-01' and paymentdate<='2004-05-31'
+
+8) display customerNo,Name, country and state and city in country wise ascending order. 
+select customerNumber,customerName,city,country,state from customers order by country
+
+9) delete those customer who are from australia country
+delete from customers where country='australia'
+
+10) display customerNumber & name & city,state & country who are from usa
+select customerNumber,customerName city,country,state from customers  where country='usa'

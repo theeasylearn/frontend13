@@ -1,4 +1,5 @@
 var express = require("express");
+const nodemailer = require('nodemailer');
 var connection = require("./connection");
 var pg = require("./PasswordGenerator");
 var bodyParser = require('body-parser');
@@ -126,7 +127,31 @@ app.post("/forgot-password",function(request,response){
                         response.json([{'error':'error occured'}]);
                     else 
                     {
-                        response.json([{'error':'no'},{'success':'yes'},{'message':'new password is sent to you on your registered email address'}]);
+                        const gmail = nodemailer.createTransport({
+                            service: "Gmail",
+                            auth: {
+                                user: "ankit3385@gmail.com", //sender email address
+                                pass: "aspzuihkezhozuts"
+                            }
+                        });
+                        async function send()
+                        {
+                            let info = await gmail.sendMail(
+                                {
+                                    from: "ankit3385@gmail.com",
+                                    to: email,
+                                    subject: `Acount Recovery email for ${email}`,
+                                    html: `Hello  <br/> We just recovered your account <br/> your new password is ${new_password} <br/> Greeting from <b>Ankit Patel </b>`
+                                }
+                            )
+                            //console.log(info);
+                            response.json([{'error':'no'},{'success':'yes'},{'message':'new password is sent to you on your registered email address'}]);
+                        }
+                        
+                        send().catch((error) =>{
+                            console.log("we got error while sending email");
+                        });
+                        
                     }
                 });
             }

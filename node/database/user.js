@@ -147,7 +147,6 @@ app.post("/forgot-password",function(request,response){
                             //console.log(info);
                             response.json([{'error':'no'},{'success':'yes'},{'message':'new password is sent to you on your registered email address'}]);
                         }
-                        
                         send().catch((error) =>{
                             console.log("we got error while sending email");
                         });

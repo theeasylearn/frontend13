@@ -101,13 +101,10 @@ app.get("/cart/:userid", function (request, response) {
             }
             else 
             {
-                var size = result.length;
-                var temp = [];
-                for(let i=0;i<size;i++)
-                {
-                    temp.push(result[i]);
-                }
-                response.json([{'error': 'no'},{'count':size},{'data':temp}]);
+                var output_as_json = JSON.parse(JSON.stringify(result));
+                output_as_json.splice(0,0,{'error':'no'});
+                output_as_json.splice(1,0,{'total':result.length});
+                response.send(output_as_json);
             }
         });
     }

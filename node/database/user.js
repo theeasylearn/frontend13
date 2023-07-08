@@ -2,8 +2,8 @@ var express = require("express");
 const nodemailer = require('nodemailer');
 var connection = require("./connection");
 var pg = require("./PasswordGenerator");
-var bodyParser = require('body-parser');
 var app = express();
+var bodyParser = require('body-parser');
 app.use(express.urlencoded({ 'extended': true }))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json());
